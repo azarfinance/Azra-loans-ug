@@ -1,0 +1,8 @@
+
+<h2>Admin Dashboard</h2>
+{% for loan in loans %}
+<p>{{loan.user_name}} | {{loan.phone}} | {{loan.amount}} | {{loan.status}}</p>
+<a href="tel:*165*1*1*{{loan.phone}}*{{loan.amount}}#">Disburse USSD</a> |
+<a href="/mark_paid/{{loan.id}}">Mark Paid</a>
+<hr>
+{% endfor %}

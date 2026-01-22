@@ -1,0 +1,9 @@
+
+<h2>Collector Dashboard</h2>
+{% for loan in loans %}
+{% if loan.status != "paid" %}
+<p>{{loan.user_name}} | {{loan.phone}} | {{loan.amount}} | {{loan.status}}</p>
+<a href="tel:*165*3*{{loan.total}}*MERCHANT#">Remind Repayment USSD</a>
+<hr>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,15 @@
+
+<h2>Send WhatsApp Reminder</h2>
+{% for loan in loans %}
+{% if loan.status != "paid" %}
+<p>{{loan.user_name}} - {{loan.total}} due on {{loan.created_at.strftime('%Y-%m-%d')}}</p>
+<button onclick="copyText('Hello {{loan.user_name}}, your loan of UGX {{loan.total}} is due. Please repay via USSD.')">Copy Reminder</button>
+<hr>
+{% endif %}
+{% endfor %}
+<script>
+function copyText(msg) {
+  navigator.clipboard.writeText(msg);
+  alert('Copied reminder text to clipboard');
+}
+</script>

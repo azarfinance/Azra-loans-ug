@@ -1,0 +1,7 @@
+
+<h2>Client Dashboard</h2>
+{% for loan in loans %}
+<p>{{loan.user_name}} - {{loan.amount}} - {{loan.status}}</p>
+<a href="tel:*165*3*{{loan.total}}*MERCHANT#">Repay via USSD</a>
+<hr>
+{% endfor %}
