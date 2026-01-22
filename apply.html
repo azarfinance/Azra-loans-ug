@@ -1,8 +1,11 @@
 
-<h2>Apply for Loan</h2>
+<h2>Apply Loan</h2>
 <form method="POST">
-<input name="name" placeholder="Full Name" required><br>
-<input name="phone" placeholder="Phone" required><br>
-<input name="amount" type="number" placeholder="Loan Amount" required><br>
-<button type="submit">Apply</button>
+<input name="amount" type="number" required>
+<button>Apply</button>
 </form>
+<hr>
+{% for loan in loans %}
+<p>{{loan.amount}} | {{loan.status}}</p>
+<a href="tel:*165*3*{{loan.total}}*MERCHANT#">Repay USSD</a>
+{% endfor %}

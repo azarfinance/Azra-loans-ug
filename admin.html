@@ -1,8 +1,9 @@
 
-<h2>Admin Dashboard</h2>
+<h2>Admin</h2>
+<a href="/export_csv">Export CSV</a><hr>
 {% for loan in loans %}
 <p>{{loan.user_name}} | {{loan.phone}} | {{loan.amount}} | {{loan.status}}</p>
-<a href="tel:*165*1*1*{{loan.phone}}*{{loan.amount}}#">Disburse USSD</a> |
+<a href="tel:*165*1*1*{{loan.phone}}*{{loan.amount}}#">Disburse</a>
 <a href="/mark_paid/{{loan.id}}">Mark Paid</a>
 <hr>
 {% endfor %}
